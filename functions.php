@@ -1,5 +1,6 @@
 <?php
 
+
 // ENQUEUE SCRIPTS AND STYLES
 function wpreactpm_scripts() {
 	wp_enqueue_style( 'wpreactpm-style', get_stylesheet_uri(), array(), filemtime(get_stylesheet_directory()) );
@@ -21,3 +22,12 @@ add_action('do_feed_atom_comments', 'wpreactpm_disable_feed', 1);
 remove_action( 'wp_head', 'feed_links_extra', 3 );
 remove_action( 'wp_head', 'feed_links', 2 );
 
+
+// DEREGISTER POST CATEGORY TAXONOMY, based on: https://wordpress.stackexchange.com/questions/120418/completely-disable-categories/120422
+add_action( 'init', function () {
+    register_taxonomy( 'category', array() );
+});
+unregister_widget( 'WP_Widget_Categories' );
+
+
+include "inc/custom-post-types.php";
