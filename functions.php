@@ -1,16 +1,19 @@
 <?php
 
+include "inc/debug.php";
 
 // ENQUEUE SCRIPTS AND STYLES
 function wpreactpm_scripts() {
-	wp_enqueue_style( 'wpreactpm-style', get_stylesheet_uri(), array(), filemtime(get_stylesheet_directory()) );
+	wp_enqueue_style( 'wpreactpm-style', get_stylesheet_uri(), array(), filemtime(get_stylesheet_directory() . '/style.css'));
+
+    wp_enqueue_script('wpreactpm-main-script', get_stylesheet_directory_uri() . '/dist/bundle.js', array(), filemtime(get_stylesheet_directory() . '/dist/bundle.js'), true);
 }
 add_action( 'wp_enqueue_scripts', 'wpreactpm_scripts' );
 
 
 // REMOVE RSS FEEDS
 function wpreactpm_disable_feed() {
-    wp_die( __( 'No feed available, the site only features the <a href="'. esc_url( home_url( '/' ) ) .'">Project Manager</a>!' ) );
+    wp_die( __( 'No feed available, the site\' only feature is the <a href="'. esc_url( home_url( '/' ) ) .'">Project Manager</a>!' ) );
 }
 add_action('do_feed', 'wpreactpm_disable_feed', 1);
 add_action('do_feed_rdf', 'wpreactpm_disable_feed', 1);
