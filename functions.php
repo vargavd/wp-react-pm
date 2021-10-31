@@ -1,6 +1,18 @@
 <?php
 
 include "inc/debug.php";
+include "inc/custom-post-types.php";
+
+
+// REDIRECT EVERYTHING TO FRONT
+add_action('template_redirect', function () {
+  // pr1(is_front_page());
+  if (!is_home()) {
+    wp_redirect(get_bloginfo('home'));
+    exit;
+  }
+});
+
 
 // ENQUEUE SCRIPTS AND STYLES
 function wpreactpm_scripts() {
@@ -33,4 +45,3 @@ add_action( 'init', function () {
 unregister_widget( 'WP_Widget_Categories' );
 
 
-include "inc/custom-post-types.php";

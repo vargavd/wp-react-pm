@@ -1,16 +1,18 @@
+// react imports
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import App from "./App.js";
+// prime styles
+import '../node_modules/primereact/resources/primereact.min.css';
+import '../node_modules/primereact/resources/themes/bootstrap4-dark-blue/theme.css';
+import '../node_modules/primeicons/primeicons.css';
+import '../node_modules/primeflex/primeflex.scss';
+
+// main styles
 import "./styles.scss";
 
-const appRouting = (
-    <Router>
-        <Switch>
-            <Route component={App} />
-        </Switch>
-    </Router>
-);
+// main component
+import App from "./components/App.js";
 
-ReactDOM.render(appRouting, document.getElementById("wpr-root"));
+
+ReactDOM.render(<App />, document.getElementById("wpr-root"));
