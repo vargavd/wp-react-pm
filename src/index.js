@@ -6,7 +6,7 @@ import ReactDOM from "react-dom";
 import '../node_modules/primereact/resources/primereact.min.css';
 import '../node_modules/primereact/resources/themes/bootstrap4-dark-blue/theme.css';
 import '../node_modules/primeicons/primeicons.css';
-import '../node_modules/primeflex/primeflex.scss';
+import '../node_modules/primeflex/primeflex.css';
 
 // main styles
 import "./styles.scss";

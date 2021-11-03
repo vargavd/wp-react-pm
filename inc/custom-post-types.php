@@ -118,7 +118,7 @@ add_action('init',  function () {
             'choose_from_most_used' => 'Choose from the most used tags',
             'menu_name'             => 'Tags',
         ),
-        'hierarchical'          => false,
+        'hierarchical'          => true,
         'show_ui'               => true,
         'show_in_rest'          => true,
         'show_admin_column'     => true,
