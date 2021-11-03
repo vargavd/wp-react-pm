@@ -1,4 +1,6 @@
 <?php
+
+// ADD POST TYPES
 add_action('init',  function () {
     // register post type: https://developer.wordpress.org/reference/functions/register_post_type/
     
@@ -70,59 +72,5 @@ add_action('init',  function () {
         'rest_base'          => 'tasks',
         'menu_icon'          => 'dashicons-editor-ul',
         'supports'           => array( 'title', 'editor', 'excerpt'),
-    ));
-
-    // register taxonomy: https://developer.wordpress.org/reference/functions/register_taxonomy/
-    
-    register_taxonomy('project_tag', 'project', array(
-        'labels' => array(
-            'name'                  => 'Tags',
-            'singular_name'         => 'Tag',
-            'search_items'          => 'Search Tags',
-            'popular_items'         => 'Popular Tags',
-            'all_items'             => 'All Tags',
-            'parent_item'           => null,
-            'parent_item_colon'     => null,
-            'edit_item'             => 'Edit Tag', 
-            'update_item'           => 'Update Tag',
-            'add_new_item'          => 'Add New Tag',
-            'new_item_name'         => 'New Tag Name',
-            'separate_items_with_commas' => 'Separate tags with commas',
-            'add_or_remove_items'   => 'Add or remove tags',
-            'choose_from_most_used' => 'Choose from the most used tags',
-            'menu_name'             => 'Tags',
-        ),
-        'hierarchical'          => false,
-        'show_ui'               => true,
-        'show_in_rest'          => true,
-        'show_admin_column'     => true,
-        'query_var'             => true,
-        'rewrite'               => array( 'slug' => 'project-tag' ),
-    ));
-
-    register_taxonomy('task_tag', 'task', array(
-        'labels' => array(
-            'name'                  => 'Tags',
-            'singular_name'         => 'Tag',
-            'search_items'          => 'Search Tags',
-            'popular_items'         => 'Popular Tags',
-            'all_items'             => 'All Tags',
-            'parent_item'           => null,
-            'parent_item_colon'     => null,
-            'edit_item'             => 'Edit Tag', 
-            'update_item'           => 'Update Tag',
-            'add_new_item'          => 'Add New Tag',
-            'new_item_name'         => 'New Tag Name',
-            'separate_items_with_commas' => 'Separate tags with commas',
-            'add_or_remove_items'   => 'Add or remove tags',
-            'choose_from_most_used' => 'Choose from the most used tags',
-            'menu_name'             => 'Tags',
-        ),
-        'hierarchical'          => true,
-        'show_ui'               => true,
-        'show_in_rest'          => true,
-        'show_admin_column'     => true,
-        'query_var'             => true,
-        'rewrite'               => array( 'slug' => 'task-tag' ),
     ));
 });
