@@ -3,6 +3,8 @@
 include "inc/debug.php";
 include "inc/custom-post-types.php";
 include "inc/custom-taxonomy.php";
+include "inc/image-sizes.php";
+include "inc/user-roles.php";
 
 
 // REDIRECT EVERYTHING TO FRONT

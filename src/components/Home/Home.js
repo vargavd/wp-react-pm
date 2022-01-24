@@ -1,10 +1,13 @@
 // react imports
 import React from "react";
+import Task from "../Tasks/Task/Task";
 
 const Home = () => {
   return (
     <div className="wpr-page home flex-1">
       <h1>Home</h1>
+
+      <Task />
 
       <ul>
         <li>3 own tasks</li>

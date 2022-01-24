@@ -13,7 +13,14 @@
  */
 
 get_header();
+
+// foreach (get_users() as $user) {
+//   $user_image_array = get_field('thumbnail', "user_" . $user->ID);
+//   pr1($user_image_array['sizes']['user-thumbnail']);
+// }
 ?>
+
+
 
 <div id="wpr-root">
 
