@@ -10,4 +10,4 @@ add_action( 'init', function () {
 
     update_option('is_user_roles_set', 1);
   }
-} );
+});

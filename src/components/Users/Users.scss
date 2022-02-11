@@ -1,0 +1,22 @@
+.wpr-page.users {
+  .user {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 100px;
+    align-items: center;
+
+    .p-avatar {
+      justify-self: center;
+    }
+
+    .user--content {
+      h2 {
+        margin: 0;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}

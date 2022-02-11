@@ -1,11 +1,19 @@
 // react imports
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+// prime react imports
+import { Button } from "primereact/button";
+
+
 import Task from "../Tasks/Task/Task";
 
 const Home = () => {
+
   return (
-    <div className="wpr-page home flex-1">
+    <div className="wpr-page home">
       <h1>Home</h1>
+
+
 
       <Task />
 

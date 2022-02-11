@@ -11,6 +11,7 @@ import { Avatar } from 'primereact/avatar';
 
 // pages
 import Home from "./Home/Home";
+import Users from "./Users/Users";
 
 const App = () => {
   return (
@@ -33,7 +34,7 @@ const App = () => {
             model={[
               { label: "Projects", icon: "pi pi-id-card" },
               { label: "Task", icon: "pi pi-list" },
-              { label: "Users", icon: "pi pi-user" }
+              { label: "Users", icon: "pi pi-user", command: () => window.location.hash = "/users" }
             ]}
           />
         </div>
@@ -47,9 +48,11 @@ const App = () => {
           <Button label="Logout" icon="pi pi-sign-out" />
         </div>
       </Sidebar>
+
       <Router>
         <Switch>
           <Route exact path='/home' component={Home} />
+          <Route exact path='/users' component={Users} />
           <Route path='*'>
             <Redirect to='/home' />
           </Route>
