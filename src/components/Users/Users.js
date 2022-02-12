@@ -25,7 +25,8 @@ const Users = (props) => {
         id: user.id,
         image: user.acf.thumbnail.sizes['user-thumbnail'],
         name: user.name,
-        role: user.roles[0]
+        role: user.roles[0],
+        email: user.email
       })));
     } else {
       usersDownloadFailed("User data is not an array!");
@@ -34,11 +35,26 @@ const Users = (props) => {
 
   // templates
   const userTemplate = user => (
-    <div className="user" style={{ width: '100%' }}>
+    <div className="user col-4 border-3 border-0 py-3 surface-card">
       <Avatar image={user.image} size="xlarge" shape="circle" />
       <div className="user--content">
-        <h2>{user.name}</h2>
-        <p>{user.role}</p>
+        <h2 className="text-primary m-0">
+          {user.name}
+        </h2>
+
+        <p className="email opacity-60 text-xs -mt-1 mb-1">
+          {user.email}
+        </p>
+
+        <p className="m-0">
+          {user.role}
+        </p>
+
+        <div className="todos opacity-60 mt-2 font-medium flex align-items-center">
+          <i className="pi pi-check-square mr-2"></i>
+
+          <div className="">5/10</div>
+        </div>
       </div>
     </div>
   );
@@ -59,13 +75,14 @@ const Users = (props) => {
   }, []);
 
 
-
   return (
-    <div className="wpr-page users">
+    <div className="wpr-page users block pt-4 px-5">
+      <h1 class="text-5xl m-0 mb-4 text-primary">Users</h1>
+
       <DataView
         value={users}
         itemTemplate={userTemplate}
-        layout={"list"}
+        layout="list"
       ></DataView>
     </div>
   );

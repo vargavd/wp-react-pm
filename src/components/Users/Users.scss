@@ -1,21 +1,25 @@
 .wpr-page.users {
+  .p-dataview {
+    .p-dataview-content {
+      background-color: var(--surface-ground);
+    }
+  }
+
   .user {
     display: grid;
     grid-template-columns: 100px 1fr;
-    grid-template-rows: 100px;
     align-items: center;
+    cursor: pointer;
 
     .p-avatar {
       justify-self: center;
+      align-self: start;
+      transition: 0.4s all;
     }
 
-    .user--content {
-      h2 {
-        margin: 0;
-      }
-
-      p {
-        margin: 0;
+    &:hover {
+      .p-avatar {
+        transform: scale(1.05);
       }
     }
   }
